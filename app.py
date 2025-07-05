@@ -7,9 +7,9 @@ UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # QQ邮箱 SMTP 配置
-EMAIL_SENDER = "907276627@qq.com"
-EMAIL_PASSWORD = "tsgvjjburvvkbfid"  # QQ邮箱授权码
-EMAIL_RECEIVER = "907276627@qq.com"  # 可以同发件人，也可另填
+EMAIL_SENDER = os.environ.get("EMAIL_SENDER")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_RECEIVER = os.environ.get("EMAIL_RECEIVER")
 
 def send_email(image_path, result_text):
     msg = EmailMessage()
